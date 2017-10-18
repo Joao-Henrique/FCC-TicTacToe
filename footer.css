@@ -4,14 +4,10 @@ ul.social-network {
     padding: 0;
     float: right;
   }
-  
   ul.social-network li {
     display: inline;
     margin: 0 5px;
   }
-  
-  
-  
   
   .social-circle li .socialIcon {
     display: inline-block;
@@ -25,13 +21,10 @@ ul.social-network {
     font-size: 20px;
     border-color: rgb(0, 0, 0);
   }
-  
   .social-circle li i {
     margin: 0;
     line-height: 40px;
-   
   }
-  
   .social-circle li .socialIcon:hover i,
   .triggeredHover {
     -moz-transform: rotate(360deg);
@@ -44,7 +37,6 @@ ul.social-network {
     -ms-transition: all 0.2s;
     transition: all 0.2s;
   }
-  
   .social-circle i {
     color: rgb(0, 0, 0);
     -webkit-transition: all 0.8s;
@@ -53,7 +45,6 @@ ul.social-network {
     -ms-transition: all 0.8s;
     transition: all 0.8s;
   }
-
 .socialFooter {
     text-align: right;
 }
