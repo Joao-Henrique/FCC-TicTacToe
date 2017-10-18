@@ -1,0 +1,19 @@
+{
+  "name": "javascript-claculator",
+  "version": "1.0.0",
+  "description": "FCC BackEnd Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joao-Henrique/JavaScript-Calculator.git"
+  },
+  "author": "João Henrique",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Joao-Henrique/JavaScript-Calculator/issues"
+  },
+  "homepage": "https://github.com/Joao-Henrique/JavaScript-Calculator#readme"
+}
