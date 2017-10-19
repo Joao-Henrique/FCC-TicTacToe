@@ -2,7 +2,6 @@ ul.social-network {
     list-style: none;
     display: inline;
     padding: 0;
-    float: right;
   }
   ul.social-network li {
     display: inline;
@@ -46,21 +45,53 @@ ul.social-network {
     transition: all 0.8s;
   }
 .socialFooter {
-    text-align: right;
-    padding-top: 15px;
+    text-align: center;
+    padding-top: 10px;
 }
 .authorFooter {
-    text-align: left;
     color: rgb(0, 0, 0);
     font-size: 25px;
-    padding-top:25px;
+    padding-top:15px;
+    text-align: center;
 }
 footer {
-  position:absolute;
-  bottom:0;
   width:100%;
   height:60px;
 }
 .footer {
   background:#6cf;
 }
+.separator {
+  visibility: hidden;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  ul.social-network {
+    float: right;
+  }
+  .authorFooter {
+    text-align: left;
+    padding-top: 22px;
+}
+footer {
+  position:absolute;
+  bottom:0;
+  height:100px;
+  background: #6cf;
+  padding-top: 15px;
+}
+.separator {
+  visibility: visible;
+}
+ }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { ... }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+  
+    
+  }
+ }
