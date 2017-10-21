@@ -23,6 +23,7 @@ ul.social-network {
   .social-circle li i {
     margin: 0;
     line-height: 40px;
+    color: white;
   }
   .social-circle li .socialIcon:hover i,
   .triggeredHover {
@@ -46,12 +47,10 @@ ul.social-network {
   }
 .socialFooter {
     text-align: center;
-    padding-top: 10px;
+    padding-top: 1em;
 }
 .authorFooter {
-    color: rgb(0, 0, 0);
-    font-size: 25px;
-    padding-top:15px;
+   color: white;
     text-align: center;
 }
 footer {
@@ -59,39 +58,35 @@ footer {
   height:60px;
 }
 .footer {
-  background:#6cf;
+  background:#03A9F4;
 }
 .separator {
   visibility: hidden;
 }
+.separatorHidden {
+  visibility: hidden;
+}
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+@media (min-width: 992px) { 
   ul.social-network {
     float: right;
   }
   .authorFooter {
     text-align: left;
-    padding-top: 22px;
-}
-footer {
-  position:absolute;
-  bottom:0;
-  height:100px;
-  background: #6cf;
-  padding-top: 15px;
-}
-.separator {
-  visibility: visible;
-}
- }
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) { ... }
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
-  
-    
+    padding-top: 1.4em;
   }
- }
+  footer {
+    position:absolute;
+    bottom:0;
+    height:100px;
+    background: #03A9F4;
+    padding-top: 15px;
+  }
+  .separator {
+    visibility: visible;
+  }
+  h6 {
+    font-size: 15px;
+  }
+}

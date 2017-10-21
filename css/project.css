@@ -1,5 +1,5 @@
 #calcOutput{
-    background-color:#2C3E50;
+    background-color:rgb(78, 78, 78);
     color: white;
     font-size:27px;
     width:250px;
@@ -37,3 +37,20 @@
     margin:4px;
     font-size:25px;
   }
+  .btn-primary {
+    background-color: rgb(0, 167, 223);
+    border-style: solid;
+    border-color: rgb(0, 120, 160);
+    color: white;
+  }
+  .btn-danger {
+    background-color: rgb(248, 86, 86);
+    border-style: solid;
+    border-color: red;
+  }
+  .btn-default {
+    background-color: rgb(184, 184, 184);
+    border-style: solid;
+    border-color: rgb(136, 136, 136);
+  }
+  
