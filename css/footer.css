@@ -6,6 +6,7 @@ ul.social-network {
   ul.social-network li {
     display: inline;
     margin: 0 5px;
+    padding: 0;
   }
   
   .social-circle li .socialIcon {
@@ -62,9 +63,11 @@ footer {
 }
 .separator {
   visibility: hidden;
+  position: absolute;
 }
 .separatorHidden {
   visibility: hidden;
+  position: absolute;
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -85,6 +88,10 @@ footer {
   }
   .separator {
     visibility: visible;
+    position: relative;
+  }
+  .separatorHidden {
+    position: relative;
   }
   h6 {
     font-size: 15px;
