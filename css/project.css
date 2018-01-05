@@ -1,56 +1,21 @@
-#calcOutput{
-    background-color:rgb(78, 78, 78);
-    color: white;
-    font-size:27px;
-    width:250px;
-    height:75px;
-    margin: auto;
-    border-top-right-radius:1em;
-    border-top-left-radius:1em;
-    text-align: right;
-  }
-  #calculator{
-    background-color:#18BC9C;
-    padding-top:12px;
-    width:250px;
-    height:270px;
-    margin:auto;
-    border-bottom-right-radius:2em;
-    border-bottom-left-radius:2em;
-  }
-  #calcSteps{
-    padding-left:10px;
-    padding-right:10px;
-    font-size:2em;
-  }
-  .calcBtn{
-    font-size:25px;
-    padding:1px;
-    margin:4px;
-    width:45px;
-    height:40px; 
-  }
-  .calcBigBtn{
-    width:101px;
-    height:40px;
-    padding:1px;
-    margin:4px;
-    font-size:25px;
-  }
-  .btn-primary {
-    background-color: rgb(0, 167, 223);
-    border-style: solid;
-    border-color: rgb(0, 120, 160);
-    color: white;
-  }
-  .btn-danger {
-    background-color: rgb(248, 86, 86);
-    border-style: solid;
-    border-color: red;
-  }
-  .btn-default {
-    background-color: rgb(184, 184, 184);
-    border-style: solid;
-    border-color: rgb(136, 136, 136);
-  }
-  
+.btn-primary {
+  padding: 15px;
+  margin: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+}
+
+.btn {
+  height: 80px;
+  width: 80px;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+  padding: 30px;
+  margin: .1px
+}
+
+#selector {
+  margin-top: 80px;
+}
