@@ -1,19 +1,19 @@
 {
-  "name": "javascript-claculator",
+  "name": "tictactoe",
   "version": "1.0.0",
-  "description": "FCC BackEnd Project",
+  "description": "FCC FrontEnd Project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Joao-Henrique/JavaScript-Calculator.git"
+    "url": "git+https://github.com/Joao-Henrique/FCC-TicTacToe.git"
   },
   "author": "João Henrique",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Joao-Henrique/JavaScript-Calculator/issues"
+    "url": "https://github.com/Joao-Henrique/FCC-TicTacToe/issues"
   },
-  "homepage": "https://github.com/Joao-Henrique/JavaScript-Calculator#readme"
+  "homepage": "https://github.com/Joao-Henrique/FCC-TicTacToe#readme"
 }
