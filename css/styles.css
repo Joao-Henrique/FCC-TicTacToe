@@ -1,28 +1,31 @@
 body {
   text-align: center;
+  background-color: #00BCD4;
 }
 .navBar {
   width:100%;
   height:40px;
-  background:#03A9F4;
+  background:#795548;
   padding-top: .1em;
+  color: #FFEB3B;
 }
 h1 {
   font-size: 30px;
+  color: #795548;
 }
 h2 {
-  color: rgb(231, 231, 231);
+  color: #212121;
   font-size: 22px;
   margin-top: .3em;
 }
 h3 {
   margin-top: .4em;
   font-size: 20px;
-  color: white;
+  color: #FFEB3B;
 }
 h5 {
   font-size: 18px;
-  color: rgb(105, 105, 105);
+  color: #795548;
   margin-bottom: 0;
   padding-bottom: .4em;
 }
@@ -30,7 +33,7 @@ h5 {
   border-top-style: dashed;
   border-color: black;
   border-width: 5px;
-  background-color: #18BC9C;
+  background-color: #FFEB3B;
   margin-top: 2em;
   padding: 15%;
 }
@@ -41,7 +44,7 @@ h5 {
 
 
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
   .navBar {
     height:100px;
     padding-top: 2em;
@@ -51,6 +54,7 @@ h5 {
     margin-bottom:1em;
     font-size: 60px;
     padding-top: 0.4em;
+    text-shadow: 5px 4px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   h2 {
     margin-top: .5em;

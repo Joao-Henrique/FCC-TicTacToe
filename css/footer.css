@@ -8,7 +8,7 @@ ul.social-network {
     margin: 0 5px;
     padding: 0;
   }
-  
+
   .social-circle li .socialIcon {
     display: inline-block;
     position: relative;
@@ -24,7 +24,7 @@ ul.social-network {
   .social-circle li i {
     margin: 0;
     line-height: 40px;
-    color: white;
+    color: #FFEB3B;
   }
   .social-circle li .socialIcon:hover i,
   .triggeredHover {
@@ -39,7 +39,7 @@ ul.social-network {
     transition: all 0.2s;
   }
   .social-circle i {
-    color: rgb(0, 0, 0);
+    color: #FFEB3B;
     -webkit-transition: all 0.8s;
     -moz-transition: all 0.8s;
     -o-transition: all 0.8s;
@@ -51,7 +51,7 @@ ul.social-network {
     padding-top: 1em;
 }
 .authorFooter {
-   color: white;
+   color: #FFEB3B;
     text-align: center;
 }
 footer {
@@ -59,7 +59,7 @@ footer {
   height:60px;
 }
 .footer {
-  background:#03A9F4;
+  background:#795548;
 }
 .separator {
   visibility: hidden;
@@ -71,7 +71,7 @@ footer {
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
   ul.social-network {
     float: right;
   }
@@ -83,7 +83,7 @@ footer {
     position:absolute;
     bottom:0;
     height:100px;
-    background: #03A9F4;
+    background: #795548;
     padding-top: 15px;
   }
   .separator {

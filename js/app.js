@@ -1,11 +1,18 @@
 $(document)
   .ready(function () {
 
+    //SHOW THE TIC TAC TOE LETERS IN THE GAME BOARD
+    let gameOn = true;
+    gameOn
+      ? ($("#" + 0).html("T"), $("#" + 1).html("I"), $("#" + 2).html("C"), $("#" + 3).html("T"), $("#" + 4).html("A"), $("#" + 5).html("C"), $("#" + 6).html("T"), $("#" + 7).html("O"), $("#" + 8).html("E"), $(".tic").css("color", "#795548"))
+      : 0;
+
     //FUNCTION TO CHECK THE WINNER
     function winCondition(turnArray, currentTurn) {
       if (turnArray[0] === currentTurn && turnArray[1] === currentTurn && turnArray[2] === currentTurn) {
         gameOn = true;
         reset();
+        $('#txt-count').html("Player " + currentTurn + " Won! Top Row !!!") && $('h4').css('color', 'green') && $('h4').css('background-color', 'white')
         alert("Player " + currentTurn + " wins! (Top row across 0,1, and 2 spots)");
       } else if (turnArray[2] === currentTurn && turnArray[4] === currentTurn && turnArray[6] === currentTurn) {
         gameOn = true;
@@ -49,7 +56,7 @@ $(document)
       var spotTaken = $("#" + id).text();
       if (spotTaken === "#") {
         count++;
-        $("#" + id).css("color", "white");
+        $("#" + id).css("color", "#795548");
         $("#" + id).text(turn);
         turns[id] = turn;
         winCondition(turns, turn);
@@ -68,7 +75,7 @@ $(document)
         var move = $("#" + computersMove).text();
         if (move === '#') {
           $('#' + computersMove).text(computersTurn);
-          $('#' + computersMove).css("color", "white");
+          $('#' + computersMove).css("color", "#795548");
           taken = true;
           turns[computersMove] = computersTurn;
         }
@@ -101,6 +108,7 @@ $(document)
     });
 
     function reset() {
+      gameOn = false;
       turns = [
         "#",
         "#",
@@ -113,7 +121,10 @@ $(document)
         "#"
       ];
       count = 0;
-      $(".tic").text("#");
+      $(".tic")
+        .text("#")
+        .css("color", "transparent");
+
       gameOn = false;
     }
   });
