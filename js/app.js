@@ -11,11 +11,11 @@ $(document)
     function winCondition(turnArray, currentTurn) {
 
       //INNER FUNCTION TO SHOW THE WIN SPOTS
-      let showWinCombination = (winSpots, firstSpot, secondSpot, thirdSpot) => {
+      const showWinCombination = (winSpots, firstSpot, secondSpot, thirdSpot) => {
         $('#txt-count').html("Player " + currentTurn + " Won! " + winSpots + " Row !!!") && $('h4').css('color', 'green') && $('h4').css('background-color', 'white');
 
         //INNER FUNCTION TO CHANHE COLOR OF WINNER SPOTS
-        let highlight = (colorOne, colorTwo) => {
+        const highlight = (colorOne, colorTwo) => {
           $("#" + firstSpot)
             .css('color', colorOne)
             .css('background-color', colorTwo);
