@@ -7,45 +7,64 @@ $(document)
       ? ($("#" + 0).html("T"), $("#" + 1).html("I"), $("#" + 2).html("C"), $("#" + 3).html("T"), $("#" + 4).html("A"), $("#" + 5).html("C"), $("#" + 6).html("T"), $("#" + 7).html("O"), $("#" + 8).html("E"), $(".tic").css("color", "#795548"))
       : 0;
 
-    //FUNCTION TO CHECK THE WINNER
+    //FUNCTION TO CHECK THE WINNER AND TRANSFORM THE BOARD ACCUORDINGLY
     function winCondition(turnArray, currentTurn) {
+
+      //INNER FUNCTION TO SHOW THE WIN SPOTS
+      let showWinCombination = (winSpots, firstSpot, secondSpot, thirdSpot) => {
+        $('#txt-count').html("Player " + currentTurn + " Won! " + winSpots + " Row !!!") && $('h4').css('color', 'green') && $('h4').css('background-color', 'white');
+
+        //INNER FUNCTION TO CHANHE COLOR OF WINNER SPOTS
+        let highlight = (colorOne, colorTwo) => {
+          $("#" + firstSpot)
+            .css('color', colorOne)
+            .css('background-color', colorTwo);
+          $("#" + secondSpot)
+            .css('color', colorOne)
+            .css('background-color', colorTwo);
+          $("#" + thirdSpot)
+            .css('color', colorOne)
+            .css('background-color', colorTwo);
+        }
+
+        highlight('#FFEB3B', '#795548');
+        window.setTimeout(function () {
+          $('#txt-count').html("Go Go Go !!! Good Luck ") && $('h4').css('color', '#FFEB3B') && $('h4').css('background-color', '#795548');
+          highlight('#795548', '#FFEB3B');
+          reset();
+        }, 3000);
+      };
+
       if (turnArray[0] === currentTurn && turnArray[1] === currentTurn && turnArray[2] === currentTurn) {
         gameOn = true;
-        reset();
-        $('#txt-count').html("Player " + currentTurn + " Won! Top Row !!!") && $('h4').css('color', 'green') && $('h4').css('background-color', 'white')
-        alert("Player " + currentTurn + " wins! (Top row across 0,1, and 2 spots)");
+        showWinCombination("Top", 0, 1, 2);
       } else if (turnArray[2] === currentTurn && turnArray[4] === currentTurn && turnArray[6] === currentTurn) {
         gameOn = true;
-        reset();
-        alert("Player " + currentTurn + " wins! (Top row across 2,4, and 6 spots)");
+        showWinCombination("Diagonal", 2, 4, 6);
       } else if (turnArray[0] === currentTurn && turnArray[3] === currentTurn && turnArray[6] === currentTurn) {
         gameOn = true;
-        reset();
-        alert("Player " + currentTurn + " wins! (1st row down 0,3, and 6 spots)");
+        showWinCombination("Left", 0, 3, 6);
       } else if (turnArray[0] === currentTurn && turnArray[4] === currentTurn && turnArray[8] === currentTurn) {
         gameOn = true;
-        reset();
-        alert("Player " + currentTurn + " wins! (1st row diagonally across 0,4, and 8 spots)");
+        showWinCombination("Diagonal", 0, 4, 8);
       } else if (turnArray[1] === currentTurn && turnArray[4] === currentTurn && turnArray[7] === currentTurn) {
         gameOn = true;
-        reset();
-        alert("Player " + currentTurn + " wins! (2nd row down 1,4, and 7 spots)");
+        showWinCombination("Middle", 1, 4, 7);
       } else if (turnArray[2] === currentTurn && turnArray[5] === currentTurn && turnArray[8] === currentTurn) {
         gameOn = true;
-        reset();
-        alert("Player " + currentTurn + " wins! (3rd row down 2,5, and 8 spots)");
-      } else if (turnArray[2] === currentTurn && turnArray[5] === currentTurn && turnArray[8] === currentTurn) {
-        gameOn = true;
-        reset();
-        alert("Player " + currentTurn + " wins! (3rd row across 2,4, and 6 spots)");
+        showWinCombination("Right", 2, 5, 8);
       } else if (turnArray[3] === currentTurn && turnArray[4] === currentTurn && turnArray[5] === currentTurn) {
         gameOn = true;
-        reset();
-        alert("Player " + currentTurn + " wins! (Middle row across 3,4, and 5 spots)");
+        showWinCombination("Middle", 3, 4, 5);
       } else if (turnArray[6] === currentTurn && turnArray[7] === currentTurn && turnArray[8] === currentTurn) {
         gameOn = true;
-        reset();
-        alert("Player " + currentTurn + " wins! (Bottom row across 6,7, and 8 spots)");
+        showWinCombination("Bottom", 6, 7, 8);
+      } else if (count > 4) {
+        $('#txt-count').html("It's a Draw !!! Try to focus now ") && $('h4').css('color', '#795548') && $('h4').css('background-color', 'white');
+        window.setTimeout(function () {
+          $('#txt-count').html("Go Go Go !!! Good Luck ") && $('h4').css('color', '#FFEB3B') && $('h4').css('background-color', '#795548');
+          reset();
+        }, 3000);
       } else {
         gameOn = false;
       }
@@ -93,8 +112,13 @@ $(document)
       reset();
       turn = 'X';
       computersTurn = 'O';
-      $("#turnO").removeClass("btn-primary");
-      $("#turnX").addClass("btn-primary");
+      $("#turnO")
+        .removeClass("btn-primary")
+        .addClass("bordered");
+      $("#turnX")
+        .removeClass("bordered")
+        .addClass("btn-primary");
+      $('#txt-count').html("Go Go Go !!! Good Luck ") && $('h4').css('color', '#FFEB3B') && $('h4').css('background-color', '#795548');
     });
 
     //IF USER PLAYS WITH O
@@ -102,9 +126,14 @@ $(document)
       reset();
       turn = "O";
       computersTurn = 'X'
-      $("#turnX").removeClass("btn-primary");
-      $("#turnO").addClass("btn-primary");
+      $("#turnX")
+        .removeClass("btn-primary")
+        .addClass("bordered");
+      $("#turnO")
+        .removeClass("bordered")
+        .addClass("btn-primary");
       $(".tic").text("#");
+      $('#txt-count').html("Go Go Go !!! Good Luck ") && $('h4').css('color', '#FFEB3B') && $('h4').css('background-color', '#795548');
     });
 
     function reset() {

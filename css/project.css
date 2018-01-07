@@ -20,6 +20,16 @@
   background-color: #FFEB3B;
 }
 
+.bordered {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 36px;
+  padding-right: 36px;
+  background-color: #795548;
+  color: #FFEB3B;
+  font-size: 48px;
+}
+
 .game-container {
   background-color: #795548;
   width: 250px;
