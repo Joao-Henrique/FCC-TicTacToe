@@ -80,9 +80,7 @@ footer {
     padding-top: 1.4em;
   }
   footer {
-    position:absolute;
-    bottom:0;
-    height:100px;
+    height:500px;
     background: #795548;
     padding-top: 15px;
   }

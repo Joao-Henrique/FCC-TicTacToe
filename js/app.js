@@ -7,12 +7,19 @@ $(document)
       ? ($("#" + 0).html("T"), $("#" + 1).html("I"), $("#" + 2).html("C"), $("#" + 3).html("T"), $("#" + 4).html("A"), $("#" + 5).html("C"), $("#" + 6).html("T"), $("#" + 7).html("O"), $("#" + 8).html("E"), $(".tic").css("color", "#795548"))
       : 0;
 
+    //FUNCTION TO PLACE CHARACTER WHEN USER CLICKS THE BOARD
+    $(".tic").click(function () {
+      var slot = $(this).attr('id');
+      playerTurn(turn, slot);
+    });
+
     //FUNCTION TO CHECK THE WINNER AND TRANSFORM THE BOARD ACCUORDINGLY
     function winCondition(turnArray, currentTurn) {
 
       //INNER FUNCTION TO SHOW THE WIN SPOTS
       const showWinCombination = (winSpots, firstSpot, secondSpot, thirdSpot) => {
-        $('#txt-count').html("Player " + currentTurn + " Won! " + winSpots + " Row !!!") && $('h4').css('color', 'green') && $('h4').css('background-color', 'white');
+        $('#txt-count').html("Player " + currentTurn + " Won! " + winSpots + " !!!") && $('h4').css('color', 'green') && $('h4').css('background-color', 'white');
+        gameOn = true;
 
         //INNER FUNCTION TO CHANHE COLOR OF WINNER SPOTS
         const highlight = (colorOne, colorTwo) => {
@@ -35,30 +42,23 @@ $(document)
         }, 3000);
       };
 
+      //GAME LOGIC
       if (turnArray[0] === currentTurn && turnArray[1] === currentTurn && turnArray[2] === currentTurn) {
-        gameOn = true;
-        showWinCombination("Top", 0, 1, 2);
-      } else if (turnArray[2] === currentTurn && turnArray[4] === currentTurn && turnArray[6] === currentTurn) {
-        gameOn = true;
-        showWinCombination("Diagonal", 2, 4, 6);
-      } else if (turnArray[0] === currentTurn && turnArray[3] === currentTurn && turnArray[6] === currentTurn) {
-        gameOn = true;
-        showWinCombination("Left", 0, 3, 6);
-      } else if (turnArray[0] === currentTurn && turnArray[4] === currentTurn && turnArray[8] === currentTurn) {
-        gameOn = true;
-        showWinCombination("Diagonal", 0, 4, 8);
-      } else if (turnArray[1] === currentTurn && turnArray[4] === currentTurn && turnArray[7] === currentTurn) {
-        gameOn = true;
-        showWinCombination("Middle", 1, 4, 7);
-      } else if (turnArray[2] === currentTurn && turnArray[5] === currentTurn && turnArray[8] === currentTurn) {
-        gameOn = true;
-        showWinCombination("Right", 2, 5, 8);
+        showWinCombination("Top Row", 0, 1, 2);
       } else if (turnArray[3] === currentTurn && turnArray[4] === currentTurn && turnArray[5] === currentTurn) {
-        gameOn = true;
-        showWinCombination("Middle", 3, 4, 5);
+        showWinCombination("Middle Row", 3, 4, 5);
       } else if (turnArray[6] === currentTurn && turnArray[7] === currentTurn && turnArray[8] === currentTurn) {
-        gameOn = true;
-        showWinCombination("Bottom", 6, 7, 8);
+        showWinCombination("Bottom Row", 6, 7, 8);
+      } else if (turnArray[2] === currentTurn && turnArray[4] === currentTurn && turnArray[6] === currentTurn) {
+        showWinCombination("Diagonal", 2, 4, 6);
+      } else if (turnArray[0] === currentTurn && turnArray[4] === currentTurn && turnArray[8] === currentTurn) {
+        showWinCombination("Diagonal", 0, 4, 8);
+      } else if (turnArray[0] === currentTurn && turnArray[3] === currentTurn && turnArray[6] === currentTurn) {
+        showWinCombination("Left Colum", 0, 3, 6);
+      } else if (turnArray[1] === currentTurn && turnArray[4] === currentTurn && turnArray[7] === currentTurn) {
+        showWinCombination("Middle Colum", 1, 4, 7);
+      } else if (turnArray[2] === currentTurn && turnArray[5] === currentTurn && turnArray[8] === currentTurn) {
+        showWinCombination("Right Colum", 2, 5, 8);
       } else if (count > 4) {
         $('#txt-count').html("It's a Draw !!! Try to focus now ") && $('h4').css('color', '#795548') && $('h4').css('background-color', 'white');
         window.setTimeout(function () {
@@ -101,25 +101,20 @@ $(document)
       }
     }
 
-    $(".tic")
-      .click(function () {
-        var slot = $(this).attr('id');
-        playerTurn(turn, slot);
-      });
-
     //IF USER PLAYS WITH X
-    $("#turnX").click(function () {
-      reset();
-      turn = 'X';
-      computersTurn = 'O';
-      $("#turnO")
-        .removeClass("btn-primary")
-        .addClass("bordered");
-      $("#turnX")
-        .removeClass("bordered")
-        .addClass("btn-primary");
-      $('#txt-count').html("Go Go Go !!! Good Luck ") && $('h4').css('color', '#FFEB3B') && $('h4').css('background-color', '#795548');
-    });
+    $("#turnX")
+      .click(function () {
+        reset();
+        turn = 'X';
+        computersTurn = 'O';
+        $("#turnO")
+          .removeClass("btn-primary")
+          .addClass("bordered");
+        $("#turnX")
+          .removeClass("bordered")
+          .addClass("btn-primary");
+        $('#txt-count').html("Go Go Go !!! Good Luck ") && $('h4').css('color', '#FFEB3B') && $('h4').css('background-color', '#795548');
+      });
 
     //IF USER PLAYS WITH O
     $("#turnO").click(function () {
@@ -136,8 +131,8 @@ $(document)
       $('#txt-count').html("Go Go Go !!! Good Luck ") && $('h4').css('color', '#FFEB3B') && $('h4').css('background-color', '#795548');
     });
 
+    //RESET FUNCTION
     function reset() {
-      gameOn = false;
       turns = [
         "#",
         "#",
@@ -153,7 +148,6 @@ $(document)
       $(".tic")
         .text("#")
         .css("color", "transparent");
-
       gameOn = false;
     }
   });
